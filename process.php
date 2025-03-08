@@ -12,10 +12,12 @@ if (isset($_GET['numbers']) && isset($_GET['threshold'])) {
         echo "<h3>Error: " . htmlspecialchars($result['error']) . "</h3>";
     } else {
         echo "<h3>Results:</h3>";
-        echo "<p>Bitwise AND: " . $result['bitwise_and'] . "</p>";
-        echo "<p>Bitwise OR: " . $result['bitwise_or'] . "</p>";
-        echo "<p>Bitwise XOR: " . $result['bitwise_xor'] . "</p>";
-        echo "<p>Numbers greater than threshold: [" . implode(", ", $result['filtered_numbers']) . "]</p>";
+        echo "<p><strong>Integers:</strong> " . htmlspecialchars($_GET['numbers']) . "</p>";
+        echo "<p><strong>Threshold:</strong> " . htmlspecialchars($_GET['threshold']) . "</p>";
+        echo "<p><strong>Bitwise AND:</strong> " . $result['bitwise_and'] . "</p>";
+        echo "<p><strong>Bitwise OR:</strong> " . $result['bitwise_or'] . "</p>";
+        echo "<p><strong>Bitwise XOR:</strong> " . $result['bitwise_xor'] . "</p>";
+        echo "<p><strong>Numbers greater than threshold:</strong> [" . implode(", ", $result['filtered_numbers']) . "]</p>";
     }
 } else {
     echo "<h3>Error: Please provide numbers and a threshold.</h3>";
